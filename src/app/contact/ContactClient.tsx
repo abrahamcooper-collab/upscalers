@@ -239,21 +239,17 @@ export default function ContactClient() {
                 <div 
                   key={info.title} 
                   className="contact-page__info-card"
-                  onClick={() => info.href !== "#" && handleCopy(info.val)}
+                  onClick={() => handleCopy(info.val)}
                 >
                   <span className="contact-page__info-icon">{info.icon}</span>
-                  <div>
+                  <div className="contact-page__info-content">
                     <h3>{info.title}</h3>
-                    {info.href !== "#" ? (
-                      <span className="contact-page__info-val contact-page__info-val--link">
-                        {info.val}
-                        <span className="contact-page__copy-tooltip">
-                          {copiedText === info.val ? "Copied!" : "Click to Copy"}
-                        </span>
+                    <span className="contact-page__info-val contact-page__info-val--link">
+                      {info.val}
+                      <span className="contact-page__copy-tooltip">
+                        {copiedText === info.val ? "Copied!" : "Click to Copy"}
                       </span>
-                    ) : (
-                      <span className="contact-page__info-val">{info.val}</span>
-                    )}
+                    </span>
                   </div>
                 </div>
               ))}
