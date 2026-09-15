@@ -121,7 +121,7 @@ export default function TermsPage() {
             <section className="legal-card" id="law">
               <h2><span className="legal-card__num">8.</span> Governing Law</h2>
               <p>
-                These terms are governed by the laws of the State of Texas, USA.
+                These terms are governed by the laws of the State of New York, USA.
               </p>
             </section>
 
