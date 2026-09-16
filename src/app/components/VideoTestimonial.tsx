@@ -6,7 +6,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const TESTIMONIALS = [
   {
     id: "paul",
-    quote: "Our busines has been on for 6 months now, and from the time Mark Williams reached out to me, He has just made our business explode, our phone rings non-stop.",
+    quote: "Our business has been on for 6 months now, and from the time Mark Williams reached out to me, He has just made our business explode, our phone rings non-stop.",
     author: "Brent Hilliard - A & B Locksmith Owner",
     videoSrc: "https://res.cloudinary.com/dcylaqbxa/video/upload/v1785276764/IMG_1743_zoc5li.mp4",
   },
