@@ -4967,6 +4967,34 @@ body,
   pointer-events: none;
 }
 
+.vt-sound-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 6;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.vt-sound-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.08);
+}
+
+.vt-sound-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   .vt-slider {

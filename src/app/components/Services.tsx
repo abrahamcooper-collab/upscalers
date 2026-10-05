@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import PixelEye from "./PixelEye";
 
@@ -85,7 +88,7 @@ const SERVICES: Service[] = [
     desc: "Capture estimate requests and job bookings 24/7 through high-converting website forms that never miss an opportunity.",
     cards: [
       {
-        videoSrc: "https://res.cloudinary.com/dcylaqbxa/video/upload/v1785567603/IMG_4427_qk4mnp.mp4",
+        videoSrc: "https://ik.imagekit.io/j6u2tyqiv/upscalers/quoteform.mp4",
         from: "#241712",
         to: "#e0853a",
         tags: ["Bookings", "Estimates"],
@@ -96,12 +99,35 @@ const SERVICES: Service[] = [
 ];
 
 function Card({ card }: { card: SvcCard }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [card.videoSrc]);
+
   const content = (
     <>
       {card.videoSrc ? (
         <video
+          ref={videoRef}
           src={card.videoSrc}
-          autoPlay
           loop
           muted
           playsInline
