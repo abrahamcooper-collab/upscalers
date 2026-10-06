@@ -14,7 +14,7 @@ const TESTIMONIALS = [
     id: "mark",
     quote: "Most of the companies were selling me fake leads, and I would barely have customers, but when I met Abraham from Upscalers company, my company completely changed. We started having minimum of 5 leads a day, and when I increased my budget, my number of leads increased.",
     author: "Prince Asong - Prince Asong Moving Owner",
-    videoSrc: "https://ik.imagekit.io/j6u2tyqiv/upscalers/prince.mp4",
+    videoSrc: "/prince.mp4",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function VideoTestimonial() {
         videoRef.current.muted = false;
         setIsMuted(false);
       }
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
     setIsPlaying(!isPlaying);
   };
@@ -154,6 +154,7 @@ export default function VideoTestimonial() {
           <div className="vt-slider__right">
             <div className="vt-player-wrapper">
               <video
+                key={active.id}
                 ref={videoRef}
                 src={active.videoSrc}
                 className="vt-player"
